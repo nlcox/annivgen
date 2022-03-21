@@ -1,1 +1,1 @@
-# annivgen
+# TANG (Twitter Anniversary Notification Generator)
