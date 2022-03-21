@@ -18,8 +18,13 @@ var img_link = ""
 var generated_text = ""
 
 func _on_b_generate_pressed():
-	generated_text = twitter_link_p1 + $e_title.text + twitter_link_p2 + $e_alttext.text + twitter_link_p3 + $e_btnlabel.text + twitter_link_p4 + $e_messagetext.text + twitter_link_p5 + $e_imglink.text
-	generated_text = generated_text.replace(" ", "%20")
+	title = $e_title.text.percent_encode()
+	message = $e_alttext.text.percent_encode()
+	action = $e_btnlabel.text.percent_encode()
+	text = $e_messagetext.text.percent_encode()
+	img_link = $e_imglink.text.percent_encode()
+	
+	generated_text = twitter_link_p1 + title + twitter_link_p2 + message + twitter_link_p3 + action + twitter_link_p4 + text + twitter_link_p5 + img_link
 	
 	$e_genlink.text = generated_text
 
